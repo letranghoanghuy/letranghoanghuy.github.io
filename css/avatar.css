@@ -1,0 +1,19 @@
+.avatar {
+    width: 100%;
+    display: none !important;
+}
+@media (max-width: 576px) {
+    .avatar {
+        width: 100%;
+        display: inline !important;
+    }
+    .res-avatar {
+        max-width: 8rem;
+        max-height: 8rem;
+        border: 0.5rem solid rgba(255, 255, 255, 0.2);
+        margin: 0 auto !important;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
