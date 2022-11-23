@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Mytheme</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;html{font-size:62.5%;overflow-x:hidden;}@media (max-width: 768px){html{font-size:55%;}}</style><link rel="stylesheet" href="styles.11ed96f7b57a9cced094.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.11ed96f7b57a9cced094.css"></noscript></head>
+
+<body>
+  <app-root></app-root>
+
+  <script>
+    $(document).ready(function () {
+
+      $('.fa-bars').click(function () {
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+      });
+
+      $(window).on('scroll load', function () {
+
+        $('.fa-bars').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+
+        if ($(window).scrollTop() > 30) {
+          $('header').addClass('header-active');
+        } else {
+          $('header').removeClass('header-active');
+        }
+
+        $('section').each(function () {
+          var id = $(this).attr('id');
+          var height = $(this).height();
+          var offset = $(this).offset().top - 200;
+          var top = $(window).scrollTop();
+          if (top >= offset && top < offset + height) {
+            $('.navbar ul li a').removeClass('active');
+            $('.navbar').find('[href="#' + id + '"]').addClass('active');
+          }
+        });
+
+      });
+
+    });
+  </script>
+<script src="runtime.27c0c660089345170ffd.js" defer></script><script src="polyfills.4b97f77efb2b9a2e7dd2.js" defer></script><script src="main.b13359e1bc1777619919.js" defer></script>
+
+</body></html>
